@@ -1,0 +1,183 @@
+*{margin: 0;
+}
+
+body{margin: 0;
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+a{text-decoration: none;
+    color: black;
+}
+
+header{text-align: center;
+    background-color: #a85238f7;
+    padding:20px
+}
+
+header h1{font-family: cursive;
+}
+
+.add_application{position: absolute;
+    top: 30px;
+    left: 20px;
+    font-size: 1.2em;   
+}
+
+.disconnect{position: absolute;
+    top: 30px;
+    right: 20px;
+    font-size: 1.2em;  
+
+}
+
+header p a:hover{transform: scale(1.1);
+    color:red;
+    transition: 1s;
+}
+
+main{padding: 20px;
+    background-image:url('../img/fond_nodkoko.jpg') ;
+    background-color: #A2916C;
+    min-height: 500px;
+}
+
+section{font-size: 18px;
+}
+
+.unconnected{flex-direction: column;
+    width: 50%;
+    font-size: 1.2em;
+}
+
+.unconnected p{text-align: center;
+}
+
+.search_bar {
+    width: 40%;
+}
+
+.search_bar form{margin: auto;
+    display: flex;
+    width: 70%;
+
+}
+
+.search_bar input[type=text]{padding: 2px;
+    font-size: 18px;
+}
+
+.search_bar input[type=submit]{
+    width: 20%;
+}
+
+.search_bar input[type=submit]:hover{
+    cursor: pointer;
+}
+
+section div{display: flex;
+    width: 100%;
+    margin: auto;
+}
+.fa-info-circle:hover{cursor: pointer;
+    color: #00a8ff;
+}
+
+.hide_div{display: none;
+}
+
+.application{width: 80%;
+    margin:10px auto;
+    flex-direction: column;
+    background-color:#fcd682 ;
+    cursor: pointer;
+}
+
+div p{padding: 5px;
+}
+
+.visible{justify-content: center;
+    width: 50%;
+}
+
+.visible div{justify-content: center;
+}
+
+.hidden{display: none;
+    flex-direction: column;
+}
+
+.hidden div p:first-child{font-weight: bold;
+    width: 200px;
+}
+
+.edit_delete{justify-content: space-evenly;
+}
+
+.link a{color: blue;
+}
+
+/*    addApplication   */
+
+h2{text-align: center;
+}
+
+#login_form, #registration, #add_application{background-color: #ffa50036;
+    margin: auto;
+    width: 40%;
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+}
+
+form div{display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+label{text-align: center;
+}
+
+input, textarea{margin: auto;
+    width: 60%;
+    border-radius:5px;
+    padding: 5px;
+    text-align: center;
+}
+
+textarea{text-align: left;
+    height:50px
+}
+
+button{margin: auto;
+    width: 25%;
+    font-size: 1.1em;
+    border-radius: 15px;
+    background-color: #a52a2a7a;
+}
+
+.unconnected button{
+    margin-top:10px ;
+}
+
+/*  registration  */
+
+.form_error, .wrong_connection p{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.red_border{border:red solid 3px;
+}
+
+/*  search   */
+
+.no_response p{text-align: center;
+    margin: auto;
+    color: red;
+    font-size: 1.2em;
+}
+
