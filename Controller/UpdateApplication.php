@@ -1,6 +1,6 @@
 <?php 
 
-require_once('../models/ApplicationsModel.php');
+require_once('../Models/ApplicationsModel.php');
 
 // verifie que la session est pas deja ouverte
 if (session_status() == PHP_SESSION_NONE) {

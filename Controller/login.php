@@ -32,4 +32,4 @@ if(!empty($_POST))
     }
 }
 
-require_once('../views/login.phtml');
+require_once('../Views/login.php');

@@ -1,6 +1,6 @@
 <?php  
 
-require_once('../models/ApplicationsModel.php');
+require_once('../Models/ApplicationsModel.php');
 
 // verifie que la session est pas deja ouverte
 if (session_status() == PHP_SESSION_NONE) {
@@ -9,7 +9,6 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $search = $_GET['search'];
 
-
 // modifie la requete en fonciton du get
 if(isset($_SESSION['connected']) )
 {
@@ -17,6 +16,4 @@ if(isset($_SESSION['connected']) )
     $applications = $model->SearchApplication($search);
 }
 
-
-
-require_once('../views/search.phtml');
+require_once('../Views/search.php');

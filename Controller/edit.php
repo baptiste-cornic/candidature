@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once('../models/ApplicationsModel.php');
+require_once('../Models/ApplicationsModel.php');
 
 if( !is_numeric($_GET['id']))
 {
@@ -26,4 +26,4 @@ if(!empty($_POST))
 }
 
 
-require_once('../views/edit.phtml');
+require_once('../Views/edit.php');

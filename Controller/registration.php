@@ -13,7 +13,7 @@ if( isset($_SESSION['connected']) == true )
 $mistake_form = false;
 $unavailable_email = false;
 
-require_once('../models/UserModel.php');
+require_once('../Models/UserModel.php');
 
 if(!empty($_POST))
 {
@@ -43,10 +43,4 @@ if(!empty($_POST))
     
 }
 
-
-
-
-
-
-
-require_once('../views/registration.phtml');
+require_once('../Views/registration.php');

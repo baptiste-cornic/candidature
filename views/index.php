@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <?php  include '../views/templates/header.phtml'; ?>
+        <?php  include '../views/templates/header.php'; ?>
     </header>
     <main>
         <section>

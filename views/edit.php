@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <?php  include '../views/templates/header.phtml'; ?>
+        <?php  include '../views/templates/header.php'; ?>
     </header>
     <main>
         <h2>Modification d'une candidature</h2>
