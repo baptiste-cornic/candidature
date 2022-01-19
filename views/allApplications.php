@@ -14,12 +14,21 @@
     </header>
     <main>
         <section>
-            <?php if(empty($applications)) :?>
-                <div class="no_response">
-                    <p>Aucune entreprise trouvée</p>
+            <?php if(!isset($_SESSION['connected'])): ?>
+                <div class="unconnected">
+                    <p>Vous devez vous connectez pour faire votre suivi de candidatures</p>
+                    <button> <a href="login.php">Connexion</a></button>
+                    <button><a href="registration.php">Inscription</a></button>
                 </div>
-            <?php endif ?>
+            <?php endif; ?>
             <?php if(!empty($applications) && isset($_SESSION['connected'])) : ?>
+                <div class="search_bar">
+                    <form class="search" action="search.php" method="get">
+                        <input name="search" placeholder="chercher une entreprise" type="text">
+                        <input type="submit" value="go">
+                    </form>
+                    <a id="all_btn" href="index.php"><p>Candidatures en cours</p></a>
+                </div>
                 <?php foreach ($applications as $application) : ?>
                     <div class="application" data-index="<?= $application['id'] ?>">
                         <div class="visible">
@@ -31,7 +40,7 @@
                             </div>
                             <div class="website">
                                 <p><?= $application['website'] ?></p>
-                            </div>                                     
+                            </div>
                         </div>
                         <div class="hidden">
                             <div class="place">
@@ -43,7 +52,7 @@
                                 <p><a target="_blank" href="<?= $application['link'] ?>"><?= $application['website'] ?></a></p>
                             </div>
                             <div class="more">
-                            <p>Plus d'information :</p>
+                                <p>Plus d'information :</p>
                                 <p><?= $application['application_information'] ?></p>
                             </div>
                             <div class="follow_up">

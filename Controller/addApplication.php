@@ -18,7 +18,7 @@ $today = date('Y-m-d');
 if(!empty($_POST) && !empty($_POST['name']) && !empty($_POST['place']) && !empty($_POST['website']) && !empty($_POST['link']) && !empty($_POST['answer']))
 {   
     $model = new ApplicationsModel();
-    $model->AddApplication($_POST['date'], $_POST['name'], $_POST['place'], $_POST['website'], $_POST['link'], $_POST['more'], $_POST['answer'], $_SESSION['user']);
+    $model->AddApplication($_POST['date'], $_POST['name'], $_POST['place'], $_POST['website'], $_POST['link'],  $_POST['more'], $_POST['follow_up'], $_POST['answer'], $_SESSION['user']);
     header('Location: index.php');
 }
 

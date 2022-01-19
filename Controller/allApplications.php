@@ -10,8 +10,8 @@ if (session_status() == PHP_SESSION_NONE) {
 if(isset($_SESSION['connected']) )
 {
     $model = new ApplicationsModel();
-    $applications = $model->GetInProgressApplications($_SESSION['user']);
+    $applications = $model->GetAllApplications($_SESSION['user']);
 }
 
 
-require_once('../Views/index.php');
+require_once('../Views/allApplications.php');

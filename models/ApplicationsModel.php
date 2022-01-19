@@ -4,7 +4,6 @@ require('SQLModel.php');
 
 class ApplicationsModel
 {
-
     protected $pdo;
     
     public function __construct()
@@ -13,7 +12,7 @@ class ApplicationsModel
         $this->pdo = $model->getDatabase();
     }
 
-    public function GetMyApplications($user_id)
+    public function GetAllApplications($user_id)
     {
         $sql = " SELECT * FROM candidatures WHERE user_id = ? ORDER BY id DESC";
         $query = $this->pdo->prepare($sql);
@@ -22,13 +21,23 @@ class ApplicationsModel
         return $applications;
     }
 
-    public function AddApplication($date, $name, $place, $website, $link, $more, $answer, $user_id)
+    // Recupere les candidatures en cours 
+    public function GetInProgressApplications($user_id)
     {
-        $sql = "INSERT INTO candidatures (id, application_date, company_name, place, website, link, more_information, answer, user_id )
-                VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?) ";
+        $sql = " SELECT * FROM candidatures WHERE (user_id = ? AND answer = 'Non') ORDER BY id DESC";
+        $query = $this->pdo->prepare($sql);
+        $query->execute([$user_id]);
+        $applications = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $applications;
+    }
+
+    public function AddApplication($date, $name, $place, $website, $link, $more, $follow_up, $answer, $user_id)
+    {
+        $sql = "INSERT INTO candidatures (id, application_date, company_name, place, website, link, application_information, follow_up, answer, user_id )
+                VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
                 var_dump($sql);
         $query = $this->pdo->prepare($sql);
-        $query->execute([$date, $name, $place, $website, $link, $more, $answer, $user_id ]);
+        $query->execute([$date, $name, $place, $website, $link, $more, $follow_up, $answer, $user_id ]);
     }
 
     public function SearchApplication($search)
@@ -49,11 +58,11 @@ class ApplicationsModel
         return $application;
     }
 
-    public function UpdateApplication($date, $name, $place, $website, $link, $more, $answer, $id)
+    public function UpdateApplication($date, $name, $place, $website, $link, $more, $follow_up, $answer, $id)
     {
-        $sql = "UPDATE candidatures SET application_date = ?, company_name = ?, place = ?, website = ?, link = ?, more_information = ?, answer = ? WHERE id = ?";
+        $sql = "UPDATE candidatures SET application_date = ?, company_name = ?, place = ?, website = ?, link = ?, application_information = ?, follow_up = ?, answer = ? WHERE id = ?";
         $query = $this->pdo->prepare($sql);
-        $query->execute([$date, $name, $place, $website, $link, $more, $answer, $id]);
+        $query->execute([$date, $name, $place, $website, $link, $more, $follow_up, $answer, $id]);
     }
 
     public function DeleteApplication($id)

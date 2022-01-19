@@ -27,6 +27,7 @@
                         <input name="search" placeholder="chercher une entreprise" type="text">
                         <input type="submit" value="go">
                     </form>
+                    <a id="all_btn" href="allApplications.php"><p>Toutes les candidatures</p></a>
                 </div>
 
                 <?php foreach ($applications as $application) : ?>
@@ -52,8 +53,12 @@
                                 <p><a target="_blank" href="<?= $application['link'] ?>"><?= $application['website'] ?></a></p>
                             </div>
                             <div class="more">
-                            <p>Plus d'information :</p>
-                                <p><?= $application['more_information'] ?></p>
+                                <p>Plus d'information :</p>
+                                <p><?= $application['application_information'] ?></p>
+                            </div>
+                            <div class="follow_up">
+                                <p>Relance</p>
+                                <p><?= $application['follow_up'] ?></p>
                             </div>
                             <div class="answer">
                             <p>Réponse :</p>

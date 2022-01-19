@@ -36,11 +36,18 @@
             </div>
             <div class="more">
                 <label for="more">Informations supplémentaires</label>
-                <textarea name="more" id="more" ><?= $application['more_information'] ?></textarea>
+                <textarea name="more" id="more" ><?= $application['application_information'] ?></textarea>
+            </div>
+            <div class="follow_up">
+                <label for="follow_up">Relance</label>
+                <textarea name="follow_up" id="follow_up" ><?= $application['follow_up'] ?></textarea>
             </div>
             <div class="answer">
                 <label for="answer">Réponse</label>
-                <input type="text" value="<?= $application['answer'] ?>" name="answer" id="answer">
+                <select name="answer" id="answer">
+                    <option value="non">Non</option>
+                    <option value="refus">Refus</option>
+                </select>
             </div>
             <div class="btn">
                 <button>Valider</button>

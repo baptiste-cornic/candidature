@@ -38,9 +38,16 @@
                 <label for="more">Informations supplémentaires</label>
                 <textarea name="more" id="more" ></textarea>
             </div>
+            <div class="follow_up">
+                <label for="follow_up">Relance</label>
+                <textarea name="follow_up" id="follow_up" ></textarea>
+            </div>
             <div class="answer">
                 <label for="answer">Réponse</label>
-                <input type="text" name="answer" id="answer">
+                <select name="answer" id="answer">
+                    <option value="non">Non</option>
+                    <option value="refus">Refus</option>
+                </select>
             </div>
             <div class="btn">
                 <button>Valider</button>
